@@ -1,0 +1,19 @@
+String[] allLongestStrings(String[] inputArray) {
+int i;
+     ArrayList<String> arr = new ArrayList<>(Arrays.asList(inputArray[0]));
+    //String a;
+    //arr.Add(inputArray[0]);
+    for (i=1;i<inputArray.length;i++)
+    {
+       if(inputArray[i].length() == arr.get(0).length())
+       {
+           arr.add(inputArray[i]);
+       }
+        if(inputArray[i].length() > arr.get(0).length())
+        {
+            arr= new ArrayList<>(Arrays.asList(inputArray[i]));
+          
+        }
+    }
+    return arr.toArray(new String[arr.size()]);
+}
