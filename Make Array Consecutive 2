@@ -1,0 +1,29 @@
+int makeArrayConsecutive2(int[] statues) {
+    int i,j,temp,n = 0;
+    //int arr[] = int statues[];
+    for(i=0;i<statues.length;i++)
+    {
+      for(j =i+1;j<statues.length;j++)  
+      {
+          if(statues[i] > statues[j])
+          {
+              temp = statues[i];
+              statues[i] = statues[j];
+              statues[j] = temp;
+          }
+      }
+    }
+for(i= 0;i<statues.length-1;i++)
+{
+    int a= statues[i];
+    int b= statues[i+1];
+    if(b-a>1)
+    {
+        n = n+ ((b-a)-1);
+    }
+    else
+        continue;
+    
+}
+    return n;
+}
