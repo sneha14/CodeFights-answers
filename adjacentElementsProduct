@@ -1,0 +1,13 @@
+int adjacentElementsProduct(int[] inputArray) {
+    int a = inputArray[0];
+    int b = inputArray[1];
+     for (int i = 0; i < inputArray.length-1; i++)
+     {
+         if (inputArray[i] * inputArray[i+1] > a * b)
+         {
+               a = inputArray[i]; 
+                b = inputArray[i+1];
+         }
+     }
+         return a*b;
+}
