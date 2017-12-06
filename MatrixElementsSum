@@ -1,0 +1,23 @@
+int matrixElementsSum(int[][] matrix) {
+ int i,j,total = 0;
+ int row = matrix.length;
+ int col =matrix[0].length;
+ for (i=0;i<row-1;i++)
+ {
+  for(j=0;j<col;j++)
+  {
+   if(matrix[i][j] == 0)
+   {
+    matrix[i+1][j] = 0;
+   }
+  }
+ }
+ for(i=0;i<row;i++)
+ {
+  for (j=0;j<col;j++)
+  {
+    total = total + matrix[i][j];
+  }
+ }
+ return total;
+}
