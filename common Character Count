@@ -1,0 +1,21 @@
+int commonCharacterCount(String s1, String s2) 
+{ int sum =0;
+ char[] as= s1.toCharArray();
+  char[] bs= s2.toCharArray();
+  
+  int[] ias = new int[126];
+  int[] ibs = new int[126];
+  
+  for (int i = 0; i < as.length; i++) {
+   ias[(int)as[i]]++;
+  }
+  
+  for (int i = 0; i < bs.length; i++) {
+   ibs[(int)bs[i]]++;
+  }
+  
+  for (int i = 0; i < ibs.length; i++) {
+   sum += Math.min(ias[i], ibs[i]);
+  }
+  return sum;
+}
